@@ -2,50 +2,50 @@
 
 ### using context api to track the things one chooses to buy in the cart page 28:30
 
-export const ShopContext = createContext(null); //Step 1
+    export const ShopContext = createContext(null); //Step 1
 
-<ShopContext.Provider value={contextValue}>
-{props.children}
-</ShopContext.Provider> //Step 2
+    <ShopContext.Provider value={contextValue}>
+    {props.children}
+    </ShopContext.Provider> //Step 2
 
-//Step 3. Creating a value-placeholder that has everything we want to pass on to other
-const contextValue = { cartItems, addToCart, removeFromCart };
+    //Step 3. Creating a value-placeholder that has everything we want to pass on to other
+    const contextValue = { cartItems, addToCart, removeFromCart };
 
-//step4 wrap the parent component with the <contextProvider> timestamp 37:40
+    //step4 wrap the parent component with the <contextProvider> timestamp 37:40
 
 ### CSS applied in the parent component is applied to child comp! 26:00
 
 ### faking a json data for products in the shop 18:30
 
-we create a js file with a array of objects. We link the img location to one of the properties.
+    we create a js file with a array of objects. We link the img location to one of the properties.
 
-we can export this to other locations to use it.
+    we can export this to other locations to use it.
 
-import { PRODUCTS } from "../assets/products";
-we are using { }
+    import { PRODUCTS } from "../assets/products";
+    we are using { }
 
 #### !!Got stuck due to not including export before the class and shop functions
 
-"export" const shop = ()=>....
+    "export" const shop = ()=>....
 
-just noticed that export next to function name is used instead of "export default function;" at the last line.
+    just noticed that export next to function name is used instead of "export default function;" at the last line.
 
 ### Placing links timestamp 11:30
 
-import {Link} from "react-router-dom"; step1
+    import {Link} from "react-router-dom"; step1
 
-<Route path="/" element={<Shop />} /> step2
+    <Route path="/" element={<Shop />} /> step2
 
-<Link to="/"> Shop </Link>            step3
+    <Link to="/"> Shop </Link>            step3
 
 ### exporting a component
 
-a. export const Navbar =()=>... //???i'm not sure why you need exporting...
+    a. export const Navbar =()=>... //???i'm not sure why you need exporting...
 
-b. in your app.js
-import {Navbar} from "./components/navbar";
+    b. in your app.js
+    import {Navbar} from "./components/navbar";
 
-c. placing the navbar component inbetween <Router> and <Routes>
+    c. placing the navbar component inbetween <Router> and <Routes>
 
 ### setting up Routes for the page
 
