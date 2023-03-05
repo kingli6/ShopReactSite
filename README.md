@@ -1,4 +1,29 @@
-#
+### ahve an error that I can't figure out.
+
+#### Figured it out!
+
+<button className="addToCartBttn" onClick={() => addToCart(id)}> //instead of this, I had this
+<button className="addToCartBttn" onClick={addToCart(id)}> // I was calling the function! which triggered useState
+
+Warning: Cannot update a component (`ShopContextProvider`) while rendering a different component (`Product`). To locate the bad setState() call inside `Product`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render
+Product@http://localhost:3000/static/js/bundle.js:810:7
+div
+div
+Shop
+RenderedRoute@http://localhost:3000/static/js/bundle.js:40023:7
+Routes@http://localhost:3000/static/js/bundle.js:40487:7
+Router@http://localhost:3000/static/js/bundle.js:40429:7
+BrowserRouter@http://localhost:3000/static/js/bundle.js:38623:7
+ShopContextProvider@http://localhost:3000/static/js/bundle.js:391:84
+div
+App react-dom.development.js:86
+React 5
+addToCart shop-context.jsx:19
+Product product.jsx:19
+React 8
+workLoop scheduler.development.js:266
+flushWork scheduler.development.js:239
+performWorkUntilDeadline scheduler.development.js:533
 
 ### displaying number of items
 

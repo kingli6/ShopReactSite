@@ -8,6 +8,7 @@ const getDefaultCart = () => {
   for (let i = 1; i < PRODUCTS.length + 1; i++) {
     cart[i] = 0; //is this how you set new items in an object? PRACTICE this!
   }
+  console.log(cart);
   return cart;
 };
 
