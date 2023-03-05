@@ -1,3 +1,29 @@
+### using another means to navigate to another page 58:45?
+
+import { useNavigate } from "react-router-dom"; //step 1
+const navigate = useNavigate(); //step 2
+<button onClick={() => navigate("/")}> Continue Shopping </button> //step 3
+
+### finding the item from PRODUCT.
+
+const getTotalCartAmount = () => {
+let totalAmount = 0;
+//scan the object
+for (const item in cartItems) {
+// console.log(Object.keys(cartItems) + "keys");
+// console.log(Object.values(cartItems) + "values");
+
+      // Is any of the value greater than 0? ie when user chooses to buy the item, we increase the value
+      if (cartItems[item] > 0) {
+        //find the item in the PRODUCT object array with the help of id // timestamp 56:00
+        let iteminfo = PRODUCTS.find((product) => product.id === Number(item)); //the need for Number(). I need to remember that the for loop creates a string?
+        totalAmount += cartItems[item] * iteminfo.price;
+      }
+    }
+    return totalAmount;
+
+};
+
 #### Warning. Items inside ShopContext can't be different than what it was called when declared.
 
 const contextValue = { cartItems, addToCart, removeFromCart };
@@ -11,25 +37,7 @@ const { cartItems } = useContext(ShopContext);
 <button className="addToCartBttn" onClick={() => addToCart(id)}> //instead of this, I had this
 <button className="addToCartBttn" onClick={addToCart(id)}> // I was calling the function! which triggered useState
 
-Warning: Cannot update a component (`ShopContextProvider`) while rendering a different component (`Product`). To locate the bad setState() call inside `Product`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render
-Product@http://localhost:3000/static/js/bundle.js:810:7
-div
-div
-Shop
-RenderedRoute@http://localhost:3000/static/js/bundle.js:40023:7
-Routes@http://localhost:3000/static/js/bundle.js:40487:7
-Router@http://localhost:3000/static/js/bundle.js:40429:7
-BrowserRouter@http://localhost:3000/static/js/bundle.js:38623:7
-ShopContextProvider@http://localhost:3000/static/js/bundle.js:391:84
-div
-App react-dom.development.js:86
-React 5
-addToCart shop-context.jsx:19
-Product product.jsx:19
-React 8
-workLoop scheduler.development.js:266
-flushWork scheduler.development.js:239
-performWorkUntilDeadline scheduler.development.js:533
+Warning: Cannot update a component (`ShopContextProvider`) while rendering a different component (`Product`).
 
 ### displaying number of items
 
