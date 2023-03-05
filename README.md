@@ -1,3 +1,9 @@
+#### Warning. Items inside ShopContext can't be different than what it was called when declared.
+
+const contextValue = { cartItems, addToCart, removeFromCart };
+const { cartItems } = useContext(ShopContext);
+//cartItems needs to be the same
+
 ### ahve an error that I can't figure out.
 
 #### Figured it out!
