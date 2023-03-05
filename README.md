@@ -1,17 +1,29 @@
 #
 
-### using context api to track the things one chooses to buy in the cart page 28:30
+### displaying number of items
 
-    export const ShopContext = createContext(null); //Step 1
+if cartItemAmount is greater than zero, then, display... 41:00
+{cartItemAmount > 0 && <>({cartItemAmount})</>}
 
-    <ShopContext.Provider value={contextValue}>
-    {props.children}
-    </ShopContext.Provider> //Step 2
+### using context api to pass (items bought) to any part of the program 28:30
 
-    //Step 3. Creating a value-placeholder that has everything we want to pass on to other
-    const contextValue = { cartItems, addToCart, removeFromCart };
+//Step 1 -initiate it in a own file(in this case) called shop-context.jsx
+export const ShopContext = createContext(null);
 
-    //step4 wrap the parent component with the <contextProvider> timestamp 37:40
+//step 2 - wrapping around {props.children} (need to learn)
+<ShopContext.Provider value={contextValue}>
+{props.children}
+</ShopContext.Provider> //Step 2
+
+//Step 3. Creating a value-placeholder that has everything we want to pass on to other
+const contextValue = { cartItems, addToCart, removeFromCart };
+
+//step4 wrap the parent(in app.js) component with the <contextProvider> timestamp 37:40, so contextValue can be used anywhere inside.
+
+//step 5 -to access the items...
+import { ShopContext } from "../../context/shop-context"; //import it in
+
+const { addToCart } = useContext(ShopContext); //initialize it, now you can use addToCart function!
 
 ### CSS applied in the parent component is applied to child comp! 26:00
 
@@ -34,13 +46,11 @@
 
     import {Link} from "react-router-dom"; step1
 
-    <Route path="/" element={<Shop />} /> step2
+    <Route path="/" element={<Shop />} /> step2     //main page
 
-    <Link to="/"> Shop </Link>            step3
+    <Link to="/"> Shop </Link>            step3 // in the navbar component
 
-### exporting a component
-
-    a. export const Navbar =()=>... //???i'm not sure why you need exporting...
+### Navbar is available on every page
 
     b. in your app.js
     import {Navbar} from "./components/navbar";

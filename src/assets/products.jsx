@@ -57,5 +57,3 @@ export const PRODUCTS = [
     productImage: product8,
   },
 ];
-
-export default PRODUCTS;

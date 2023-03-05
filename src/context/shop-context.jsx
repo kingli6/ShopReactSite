@@ -22,7 +22,7 @@ export const ShopContextProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
-  //last second step. Creating a value-placeholder that has everything we want to pass on to other
+  //Step 3. Creating a value-placeholder that has everything we want to pass on to other
   const contextValue = { cartItems, addToCart, removeFromCart };
   return (
     <ShopContext.Provider value={contextValue}>
