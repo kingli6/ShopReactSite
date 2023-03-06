@@ -108,12 +108,14 @@ const { addToCart } = useContext(ShopContext); //initialize it, now you can use 
 
 ### Packages needed [tutorial link](https://www.youtube.com/watch?v=tEMrD9t85v4&t=700s)
 
-    npm install phosphor-react react-router-dom
+    'npm install phosphor-react react-router-dom'
 
-    # You import react-router-dom with
-        import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+#### You import react-router-dom with
 
-# Getting Started with Create React App
+    import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+
+<!--
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -182,4 +184,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
